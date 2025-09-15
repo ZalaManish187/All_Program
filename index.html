@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Latest Font Awesome Free -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container flex justify-center items-center mt-18 gap-2" id="main-container">
+      <div class="inputSearch">
+        <input
+          type="number"
+          placeholder="Enter a Number"
+          class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-400"
+          id="num"
+        />
+      </div>
+      <div class="btnButons">
+        <button
+          id="btn"
+          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+        >
+          <i class="fa-solid fa-asterisk text-2xl"></i>
+        </button>
+        <button
+          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+          id="rec"
+        >
+          <i class="fa-solid fa-caret-up text-2xl"></i>
+        </button>
+      </div>
+      <!-- Color input -->
+      <div class="color">
+        <button
+          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+          id="rec"
+        >
+          <input
+            type="color"
+            id="colorPicker"
+            value="#ff0000"
+            class="border-2 border-gray-400 rounded cursor-pointer"
+          />
+        </button>
+        <button
+          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+          id="odd"
+        >
+          Odd
+        </button>
+         <button
+          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+          id="even"
+        >
+          Even
+        </button>
+      </div>
+    </div>
+
+    <div class="flex justify-center items-center text-xl mt-18">
+      <p class="" id="output"></p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
