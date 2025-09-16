@@ -12,34 +12,57 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
   </head>
-  <body>
+  <body class="min-h-screen bg-indigo-600 flex items-center justify-center">
+    <div class="bg-white w-100 flex justify-center items-center flex-col bg-white p-6 rounded-lg shadow-lg" id="main">
     <div class="container flex justify-center items-center mt-18 gap-2" id="main-container">
       <div class="inputSearch">
-        <input
-          type="number"
-          placeholder="Enter a Number"
+        <input class='w-full h-12 bg-white p-6 rounded-lg shadow-lg main'
+          type="number" 
+          placeholder="Enter a Number" value="5"
           class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-400"
           id="num"
         />
       </div>
-      <div class="btnButons">
-        <button
-          id="btn"
-          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+       <button
+          class="inline-block rounded-md shadow-lg border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+          onclick="generateFunction(); NumberFunction();"
         >
-          <i class="fa-solid fa-asterisk text-2xl"></i>
+        Generate
         </button>
-        <button
-          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
-          id="rec"
-        >
-          <i class="fa-solid fa-caret-up text-2xl"></i>
-        </button>
-      </div>
-      <!-- Color input -->
-      <div class="color">
-        <button
-          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
+        </div>
+          <div class="animation-name flex justify-center items-center mt-5 gap-2">
+          <div class="grid grid-cols-1">
+            <select   id="pattern"  class="main w-full h-11 col-start-1 row-start-1 w-30 appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+              <option value="asterisk">asterisk(*)</option>
+              <option value="pyramid">pyramid</option>
+              <option value="Diamond">Diamond</option>
+              <option value="rectangle">rectangle</option>
+              <option value=""></option>
+              <option value=""></option>
+
+            </select>
+            <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+              <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </div>
+          
+       
+         <div class="grid grid-cols-1">
+            <select   id="numbers"  class="h-11 w-full col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pr-8 pl-3 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 main">
+              <option value="Odd">Odd</option>
+              <option value="Even">Even</option>
+              <option value="Prime">Prime</option>
+              <option value="Palindrome">Palindrome</option>
+              <option value="fibo">fibo series</option>
+              <option value="factor">factor</option>
+
+            </select>
+            <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4">
+              <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </div>
+         <button
+          class="inline-block rounded-md border border-transparent  px-8 py-3 text-center font-medium text-white hover:bg-indigo-700 h-11 main"
           id="rec"
         >
           <input
@@ -49,23 +72,13 @@
             class="border-2 border-gray-400 rounded cursor-pointer"
           />
         </button>
-        <button
-          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
-          id="odd"
-        >
-          Odd
-        </button>
-         <button
-          class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
-          id="even"
-        >
-          Even
-        </button>
-      </div>
-    </div>
+         </div>
+        
+      
 
     <div class="flex justify-center items-center text-xl mt-18">
       <p class="" id="output"></p>
+    </div>
     </div>
     <script src="script.js"></script>
   </body>

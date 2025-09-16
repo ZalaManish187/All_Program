@@ -34,9 +34,68 @@
     transform: rotate(360deg);
    }
 }
+.rect{
+    animation: rect 1s linear infinite;
+}
+@keyframes rect {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.gemPatt{
+    animation: gem 1s linear infinite;
+
+}
+.even{
+    animation : even 1s linear infinite;
+}
+@keyframes even {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes gem {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+#main{
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.15),
+                0px 12px 10px -10px rgba(0,0,0,0.05);
+    border: 0;
+    outline: 0;
+
+}
+.main{
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+                inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                -0.5px -0.5px 0px rgba(255,255,255,1),
+                0.5px 0.5px 0px rgba(0,0,0,0.15),
+                0px 12px 10px -10px rgba(0,0,0,0.05);
+
+}
 
 @media (max-width:481px){
-    #main-container{
-        flex-direction: column;
+    #main{
+        max-width: 95%;
+       
+    }
+    .animation-name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:20px;
     }
 }
