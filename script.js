@@ -65,9 +65,11 @@ function NumberFunction(){
    let n = document.getElementById("num").value;
   let result = "";
   let color = colorPicker.value;
+  
 
    if(numbers.value === "Odd"){
     let e = 1;
+   
     for(let i = 1; i <= n ; i ++){
       for(let j = 1; j <= n - i ; j++){
         result += "&nbsp;&nbsp;"
@@ -75,6 +77,7 @@ function NumberFunction(){
       for(let k = 1; k <= i ; k++){
        result += `<span class='even' style = 'color:${color}' > ${e} </span>` + " ";
        e += 2;
+      
       }
         result += "<br>";
 
@@ -82,6 +85,7 @@ function NumberFunction(){
   }
  else if(numbers.value === "Even"){
   let m = 2;
+  
     
     for(let i = 1; i <= n ; i ++){
       for(let j = 1; j <= n - i ; j++){
@@ -90,12 +94,49 @@ function NumberFunction(){
       for(let k = 1; k <= i ; k++){
        result += `<span class='even' style = 'color:${color}' > ${m} </span>` + " ";
        m += 2;
+       
         
       }
       result += "<br>";
     }
     
   }
+  else if(numbers.value === "Prime"){
+    let k = 2;
+   
+    for(let i=1;i<=n;i++){
+      let rowCount = 0;
+      for(let s = 1 ; s < n -i ; s ++){
+        result += "&nbsp;&nbsp;"
+      }
+
+      while (rowCount < i){
+      let isPrime = true;
+      for(let j=2;j<=Math.sqrt(k);j++){
+        if(k % j === 0){
+          isPrime = false;
+          break;
+        }
+      }
+      if(isPrime){
+        result += `<span class='even' style = 'color:${color}' > ${k} </span>` + " ";
+       
+        rowCount ++;
+        
+      }
+      k++;
+      
+
+
+    
+    }
+     result += "<br>";
+
+    }
+
+   
+  }
+
   document.getElementById("output").innerHTML = result;
 
 }
