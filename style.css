@@ -78,7 +78,7 @@
 
 }
 
-@media (max-width:900px){
+@media (max-width:481px){
     #main{
         width: 100%;
         max-width:97%;
