@@ -78,11 +78,23 @@
 
 }
 #main {
-  max-width: 1200px;      /* content ki max width */
-  margin: 0 auto;         /* center align */
-  padding: 0 16px;        /* left-right gap har screen pe */
-  box-sizing: border-box; /* padding width ke andar count ho */
+  max-width: 1200px;      
+  margin: 0 auto;        
+  padding: 0 16px;        
+  box-sizing: border-box; 
 }
 
 
+@media (max-width: 768px) {
+  #main {
+    gap: 15px;
+  }
+ 
+}
+
+@media (max-width: 480px) {
+  #card {
+    width: 100%; 
+  }
+}
 
