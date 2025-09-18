@@ -77,12 +77,12 @@
                 0px 12px 10px -10px rgba(0,0,0,0.05);
 
 }
-
-@media (max-width:500px){
-    #main{
-        width: 100%;
-        max-width:97%;
-       
-    }
-    
+#main {
+  max-width: 1200px;      /* content ki max width */
+  margin: 0 auto;         /* center align */
+  padding: 0 16px;        /* left-right gap har screen pe */
+  box-sizing: border-box; /* padding width ke andar count ho */
 }
+
+
+
