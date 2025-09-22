@@ -3,7 +3,13 @@ let colorPicker = document.getElementById("colorPicker");
 let patt = document.getElementById("pattern");
 
  
-
+ function fact(n){
+let f = 1;
+   for(let i=1;i<=n;i++){
+    f *= i;
+   }
+   return f;
+    }
 
  
  function Square(){
@@ -38,36 +44,74 @@ let numbers = document.getElementById("numbers");
 
 
      }
-  //    else if(numbers.value === "Prime"){
-  //     let primes = [];
+     else if(numbers.value === "Prime"){
+      let primes = [];
+      let n = document.getElementById("num").value;
+      let color = colorPicker.value;
       
-  //     for(let i=2;i<=n * n;i++){
-  //       let isPrime = true;
-  //       for(let j=2;j<i;j++){
-  //         if(i% j === 0){
-  //           isPrime = false;
-  //           break;
-  //         }
-  //       }
-  //       if(isPrime){
-  //         primes.push(i);
+      for(let i=2;i<=n*n;i++){
+        let isPrime = true;
+        for(let j=2;j<i;j++){
+          if(i% j === 0){
+            isPrime = false;
+            break;
+          }
+        }
+        if(isPrime){
+          primes.push(i);
           
-  //       }
-  //       let index = 0;
-  // for (let a = 1; a <= n; a++) {
-  //   for (let b = 1; b <= n; b++) {
-  //     result += `<span style='color:${color}'>${primes[index]}</span> `;
-  //     index++;
-  //   }
-  //   result += "<br>";
-  // }
+       
         
-  //     }
-  //    }
+      }
+     }
+     let k = 0;
+     for(let i=1;i<=n;i++){
+      for(let j=1;j<=n;j++){
+        if(k < primes.length){
+        result += `<span id='SquarePattern' style='color:${color}'>${primes[k]}</span>` + " ";
+        k++;
+        }
+        
+    }
+      result += "<br>";
 
-   document.getElementById("output").innerHTML = result;
+     }
+
 
    }
+   else if(numbers.value === "Fibo"){
+      let n = document.getElementById("num").value;
+      let color = colorPicker.value;
+      let a = 1;
+      let b = 1;
+      for(let i=1;i<=n;i++){
+        for(let j=1;j<=n;j++){
+          result += `<span id='fiboSquare' style='color:${color}'>${a}</span>` + " ";
+          let c = a + b;
+          a = b;
+          b = c;
+        }
+      result += "<br>";
+
+      }
+   }
+  //  else if(numbers.value === "Factorial"){
+   
+    
+   
+  //   let k=1;
+
+  //  for(let i=1;i<=n;i++){
+  //   for(let j=1;j<=n;j++){
+  //     result += fact(k) + " ";
+  //     k+=2;
+  //   }
+  //   result += "<br>";
+  //  }
+  //  }
+  //  document.getElementById("output").innerHTML = result;
+
+  // }
 
    function Pyramid(){
     let n = document.getElementById("num").value;
@@ -97,6 +141,57 @@ let numbers = document.getElementById("numbers");
            result += `<span style='color:${color}'>${E}</span>` + " ";
           E += 2;
         
+      }
+      result += "<br>";
+    }
+  }
+  else if(numbers.value === "Prime"){
+   if(n < 2)return false;
+   for(let i=1;i<=n;i++){
+
+   }
+    for(let i=1;i<=prime.length;i++){
+      for(let j=1;j<=prime.length-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        if(P < prime.length){
+        result += `<span style='color:${color}'>${prime[P]}</span>`;
+        P++;
+        }
+      }
+      result += "<br>";
+    }
+  }
+  else if(numbers.value === "Fibo"){
+    let n = document.getElementById("num").value;
+   
+    let a = 1;
+    let b = 1;
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n - i;j++){
+        result += "&nbsp;&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        
+        result += `<span id='fibo' style='color:${color}'>${a}</span>` + " ";
+        let c = a + b;
+        a = b;
+        b = c;
+       
+      }
+    result += "<br>";
+
+    }
+  }
+  else if(numbers.value === "Factorial"){
+    let Fact = 1;
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        result *= `<span style='color:${color}'>${i} = ${Fact}</span>`
       }
       result += "<br>";
     }
@@ -137,6 +232,27 @@ let numbers = document.getElementById("numbers");
         
       }
       result += "<br>";
+    }
+  }
+  else if(numbers.value === "Fibo"){
+    let n = document.getElementById("num").value;
+   
+    let a = 1;
+    let b = 1;
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=n - i;j++){
+        result += "&nbsp;&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        
+        result += `<span id='fibo' style='color:${color}'>${a}</span>` + " ";
+        let c = a + b;
+        a = b;
+        b = c;
+       
+      }
+    result += "<br>";
+
     }
   }
     document.getElementById("output").innerHTML = result;
@@ -197,6 +313,44 @@ let numbers = document.getElementById("numbers");
       result += "<br>";
     }
   }
+  else if(numbers.value === "Fibo"){
+    let n = document.getElementById("num").value;
+   
+    let a = 1;
+    let b = 1;
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n - i;j++){
+        result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        
+        result += `<span id='fiboDiamond' style='color:${color}'>${a}</span>` + " ";
+        let c = a + b;
+        a = b;
+        b = c;
+       
+      }
+    result += "<br>";
+
+    }
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=n - i;j++){
+        result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        
+        result += `<span id='fiboDiamond' style='color:${color}'>${a}</span>` + " ";
+        let c = a + b;
+        a = b;
+        b = c;
+       
+      }
+    result += "<br>";
+
+    }
+  
+  }
+  
     
    document.getElementById("output").innerHTML = result;
 
@@ -232,6 +386,23 @@ let numbers = document.getElementById("numbers");
       result += "<br>";
    }
   }
+  else if(numbers.value === "Fibo"){
+    let n = document.getElementById("num").value;
+    let a = 1;
+    let b = 1;
+    for(let i=1;i<=n;i++){
+      for(let j=2*n-i;j>=i;j--){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        result += `<span id='rightFibo' style='color:${color}'>${a}</span>`;
+        let c =  a +  b;
+        a = b;
+        b = c;
+      }
+      result += "<br>";
+    }
+  }
    document.getElementById("output").innerHTML = result;
 
   }
@@ -259,6 +430,20 @@ let numbers = document.getElementById("numbers");
       for(let k=1;k<=i;k++){
         result += `<span style='color:${color}'>${E}</span>` + " ";
           E += 2;
+      }
+      result += "<br>";
+    }
+  }
+  else if(numbers.value === "Fibo"){
+    let n = document.getElementById("num").value;
+    let a = 1;
+    let b = 1;
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<i;j++){
+        result += `<span style='color:${color}'>${a}</span>` + " ";
+        let c = a + b;
+        a = b;
+        b = c;
       }
       result += "<br>";
     }
@@ -319,6 +504,34 @@ let numbers = document.getElementById("numbers");
       result += "<br>";
     }
   }
+  else if(numbers.value === "Fibo"){
+    let a = 1;
+    let b = 1;
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        result += `<span id='fiboHour' style = 'color:${color}'> ${a}</span>` + " ";
+        let c = a + b;
+        a = b;
+        b = c;
+      }
+      result += "<br>";
+    }
+     for(let i=1;i<=n;i++){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        result += `<span id='fiboHour' style = 'color:${color}'> ${a}</span>` + " ";
+        let c = a + b;
+        a = b;
+        b = c;
+      }
+      result += "<br>";
+    }
+  }
   
     document.getElementById("output").innerHTML = result;
   }
@@ -343,6 +556,19 @@ let numbers = document.getElementById("numbers");
       for(let j=1;j<=i;j++){
           result += `<span style='color:${color}'>${E}</span>` + " "; 
           E += 2;
+      }
+      result += "<br>";
+    }
+  }
+  else if(numbers.value === "Fibo"){
+    let a = 1;
+    let b = 1;
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=i;j++){
+        result += `<span id="FiboRight" style='color:${color}'>${a}</span>` + " ";
+        let c = a + b;
+        a = b;
+        b = c;
       }
       result += "<br>";
     }
