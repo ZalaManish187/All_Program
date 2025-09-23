@@ -3,13 +3,19 @@ let colorPicker = document.getElementById("colorPicker");
 let patt = document.getElementById("pattern");
 
  
- function fact(n){
-let f = 1;
-   for(let i=1;i<=n;i++){
-    f *= i;
-   }
-   return f;
+ 
+
+
+
+  function isPrime(num){
+    if(num < 2) return false;
+    for(let i=2;i<num;i++){
+      if(num % i === 0) return false;
+      
     }
+      return true;
+
+  }
 
  
  function Square(){
@@ -45,36 +51,21 @@ let numbers = document.getElementById("numbers");
 
      }
      else if(numbers.value === "Prime"){
-      let primes = [];
-      let n = document.getElementById("num").value;
-      let color = colorPicker.value;
-      
-      for(let i=2;i<=n*n;i++){
-        let isPrime = true;
-        for(let j=2;j<i;j++){
-          if(i% j === 0){
-            isPrime = false;
-            break;
-          }
-        }
-        if(isPrime){
-          primes.push(i);
-          
-       
-        
-      }
-     }
-     let k = 0;
+      let number = 2;
+    
+      let count = 0;
      for(let i=1;i<=n;i++){
       for(let j=1;j<=n;j++){
-        if(k < primes.length){
-        result += `<span id='SquarePattern' style='color:${color}'>${primes[k]}</span>` + " ";
-        k++;
-        }
-        
-    }
-      result += "<br>";
+        while(!isPrime(number)){
+          number++;
 
+        }
+        result +=`<span style='color:${color}'>${number}</span>` + " ";
+        number++;
+        count++;
+
+      }
+      result += "<br>";
      }
 
 
@@ -95,23 +86,43 @@ let numbers = document.getElementById("numbers");
 
       }
    }
-  //  else if(numbers.value === "Factorial"){
-   
-    
-   
-  //   let k=1;
+   else if(numbers.value === "Factorial"){
+ let number = 1;
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n;j++){
+        let fact = 1;
+  for(let x=1;x<=n;x++){
+    fact *= x;
+  }
+        result += `<span id='factSquare'  style='color:${color}'>${fact}</span>` + " ";
+     number++;
+      
+       
+      
 
-  //  for(let i=1;i<=n;i++){
-  //   for(let j=1;j<=n;j++){
-  //     result += fact(k) + " ";
-  //     k+=2;
-  //   }
-  //   result += "<br>";
-  //  }
-  //  }
-  //  document.getElementById("output").innerHTML = result;
+    }
+      result += "<br>";
 
-  // }
+
+
+  
+   }
+  }
+   else if(numbers.value === "Palindrome"){
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n;j++){
+        result += `<span style = 'color:${color}'>${j}</span>`
+      }
+      for(let j=n-1;j>=1;j--){
+        result += `<span style = 'color:${color}'>${j}</span>`
+
+      }
+      result += "<br>";
+    }
+   }
+   document.getElementById("output").innerHTML = result;
+
+  }
 
    function Pyramid(){
     let n = document.getElementById("num").value;
@@ -146,19 +157,19 @@ let numbers = document.getElementById("numbers");
     }
   }
   else if(numbers.value === "Prime"){
-   if(n < 2)return false;
-   for(let i=1;i<=n;i++){
-
-   }
-    for(let i=1;i<=prime.length;i++){
-      for(let j=1;j<=prime.length-i;j++){
+    let number = 2;
+    let count = 0;
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n-i;j++){
         result += "&nbsp;&nbsp;";
       }
       for(let k=1;k<=i;k++){
-        if(P < prime.length){
-        result += `<span style='color:${color}'>${prime[P]}</span>`;
-        P++;
+        while(!isPrime(number)){
+          number ++;
         }
+        result += `<span style='color:${color}'>${number}</span>` + " ";
+        number ++;
+        count ++;
       }
       result += "<br>";
     }
@@ -185,13 +196,40 @@ let numbers = document.getElementById("numbers");
     }
   }
   else if(numbers.value === "Factorial"){
-    let Fact = 1;
+   let number = 1;
     for(let i=1;i<=n;i++){
       for(let j=1;j<=n-i;j++){
         result += "&nbsp;&nbsp;";
       }
       for(let k=1;k<=i;k++){
-        result *= `<span style='color:${color}'>${i} = ${Fact}</span>`
+      let fact = 1;
+  for(let x=1;x<=number;x++){
+    fact *= x;
+  }
+        result += `<span id='factPyramid'  style='color:${color}'>${fact}</span>` + "&nbsp;&nbsp;&nbsp;";
+       
+number++;
+        
+        
+      }
+      result += "<br>";
+    }
+  }
+  else if(numbers.value === "Palindrome"){
+  
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let j=1;j<=i;j++){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+       for(let j=i-1;j>=1;j--){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
       }
       result += "<br>";
     }
@@ -234,6 +272,22 @@ let numbers = document.getElementById("numbers");
       result += "<br>";
     }
   }
+  else if(numbers.value === "Prime"){
+    let number = 0;
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        while(!isPrime(number)){
+          number ++;
+        }
+        result += `<span style='color:${color}'>${number}</span>` + " ";
+        number ++;
+      }
+      result += "<br>";
+    }
+  }
   else if(numbers.value === "Fibo"){
     let n = document.getElementById("num").value;
    
@@ -253,6 +307,41 @@ let numbers = document.getElementById("numbers");
       }
     result += "<br>";
 
+    }
+  }
+  else if(numbers.value === "Palindrome"){
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let j=1;j<=i;j++){
+        result += `<span  id='palindrome' style='color:${color}'>${j}</span>`;
+      }
+      for(let j=i-1;j>=1;j--){
+     result += `<span  id='palindrome' style='color:${color}'>${j}</span>`;
+
+      }
+      result += "<br>";
+    }
+  }
+   else if(numbers.value === "Factorial"){
+   let number = 1;
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+      let fact = 1;
+  for(let x=1;x<=number;x++){
+    fact *= x;
+  }
+        result += `<span id='factPyramid'  style='color:${color}'>${fact}</span>` + "&nbsp;&nbsp;&nbsp;";
+       
+number++;
+        
+        
+      }
+      result += "<br>";
     }
   }
     document.getElementById("output").innerHTML = result;
@@ -313,6 +402,35 @@ let numbers = document.getElementById("numbers");
       result += "<br>";
     }
   }
+  else if(numbers.value === "Prime"){
+    let number = 0;
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        while(!isPrime(number)){
+          number ++;
+        }
+        result += `<span style='color:${color}'>${number}</span>` + " ";
+        number ++;
+      }
+      result += "<br>";
+    }
+     for(let i=n;i>=1;i--){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        while(!isPrime(number)){
+          number ++;
+        }
+        result += `<span style='color:${color}'>${number}</span>` + " ";
+        number ++;
+      }
+      result += "<br>";
+  }
+}
   else if(numbers.value === "Fibo"){
     let n = document.getElementById("num").value;
    
@@ -350,6 +468,41 @@ let numbers = document.getElementById("numbers");
     }
   
   }
+   else if(numbers.value === "Palindrome"){
+  
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let j=1;j<=i;j++){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+       for(let j=i-1;j>=1;j--){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+      result += "<br>";
+    }
+     for(let i=n;i>=1;i--){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let j=1;j<=i;j++){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+       for(let j=i-1;j>=1;j--){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+      result += "<br>";
+    }
+  }
   
     
    document.getElementById("output").innerHTML = result;
@@ -386,6 +539,22 @@ let numbers = document.getElementById("numbers");
       result += "<br>";
    }
   }
+  else if(numbers.value === "Prime"){
+    let number = 0;
+    for(let i=1;i<=n;i++){
+      for(let j=2*n-i;j>=i;j--){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        while(!isPrime(number)){
+          number++;
+        }
+        result += `<span style='color:${color}'>${number}</span>` + " ";
+        number ++;
+      }
+      result += "<br>";
+    }
+  }
   else if(numbers.value === "Fibo"){
     let n = document.getElementById("num").value;
     let a = 1;
@@ -394,11 +563,32 @@ let numbers = document.getElementById("numbers");
       for(let j=2*n-i;j>=i;j--){
         result += "&nbsp;&nbsp;";
       }
-      for(let k=1;k<=i;k++){
+      for(let k  =1;k<=i;k++){
         result += `<span id='rightFibo' style='color:${color}'>${a}</span>`;
         let c =  a +  b;
         a = b;
         b = c;
+      }
+      result += "<br>";
+    }
+  }
+   else if(numbers.value === "Palindrome"){
+    for(let i=1;i<=n;i++){
+       for(let j=2*n-i;j>=i;j--){
+        result += "&nbsp;&nbsp;";
+
+       
+      }
+       for(let j=1;j<=i;j++){
+              result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+
+       
+      }
+       for(let j=i-1;j>=1;j--){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
       }
       result += "<br>";
     }
@@ -434,6 +624,19 @@ let numbers = document.getElementById("numbers");
       result += "<br>";
     }
   }
+  else if(numbers.value === "Prime"){
+    let number = 0;
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=i;j++){
+        while(!isPrime(number)){
+          number++;
+        }
+        result += `<span style='color:${color}'>${number}</span>`;
+        number ++;
+      }
+      result += "<br>";
+    }
+  }
   else if(numbers.value === "Fibo"){
     let n = document.getElementById("num").value;
     let a = 1;
@@ -447,6 +650,43 @@ let numbers = document.getElementById("numbers");
       }
       result += "<br>";
     }
+  }
+  else if(numbers.value === "Palindrome"){
+    for(let i=1;i<=n;i++){
+       for(let j=1;j<=i;j++){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+       for(let j=i-1;j>=1;j--){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+      result += "<br>";
+    }
+  }
+  else if(numbers.value === "Factorial"){
+ let number = 1;
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=i;j++){
+        let fact = 1;
+  for(let x=1;x<=number;x++){
+    fact *= x;
+  }
+        result += `<span id='factSquare'  style='color:${color}'>${fact}</span>` + " ";
+     number++;
+      
+       
+      
+
+    }
+      result += "<br>";
+
+
+
+  
+   }
   }
     document.getElementById("output").innerHTML = result;
 
@@ -504,6 +744,35 @@ let numbers = document.getElementById("numbers");
       result += "<br>";
     }
   }
+  else if(numbers.value === "Prime"){
+    let number = 0;
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        while(!isPrime(number)){
+          number++;
+        }
+        result += `<span style='color:${color}'>${number}</span>` + " ";
+        number ++;
+      }
+      result += "<br>";
+    }
+     for(let i=1;i<=n;i++){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+        while(!isPrime(number)){
+          number++;
+        }
+        result += `<span style='color:${color}'>${number}</span>` + " ";
+        number ++;
+      }
+      result += "<br>";
+    }
+  }
   else if(numbers.value === "Fibo"){
     let a = 1;
     let b = 1;
@@ -528,6 +797,77 @@ let numbers = document.getElementById("numbers");
         let c = a + b;
         a = b;
         b = c;
+      }
+      result += "<br>";
+    }
+  }
+  else if(numbers.value === "Palindrome"){
+     for(let i=n;i>=1;i--){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let j=1;j<=i;j++){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+       for(let j=i-1;j>=1;j--){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+      result += "<br>";
+    }
+     for(let i=1;i<=n;i++){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let j=1;j<=i;j++){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+       for(let j=i-1;j>=1;j--){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+      result += "<br>";
+    }
+  }
+    else if(numbers.value === "Factorial"){
+   let number = 1;
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+      let fact = 1;
+  for(let x=1;x<=number;x++){
+    fact *= x;
+  }
+        result += `<span id='factPyramid'  style='color:${color}'>${fact}</span>` + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+number++;
+        
+        
+      }
+      result += "<br>";
+    }
+    for(let i=1;i<=n;i++){
+      for(let j=1;j<=n-i;j++){
+        result += "&nbsp;&nbsp;";
+      }
+      for(let k=1;k<=i;k++){
+      let fact = 1;
+  for(let x=1;x<=number;x++){
+    fact *= x;
+  }
+        result += `<span id='factPyramid'  style='color:${color}'>${fact}</span>` + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+number++;
+        
+        
       }
       result += "<br>";
     }
@@ -560,6 +900,19 @@ let numbers = document.getElementById("numbers");
       result += "<br>";
     }
   }
+  else if(numbers.value === "Prime"){
+    let number = 0;
+    for(let i=n;i>=1;i--){
+      for(let j=1;j<=i;j++){
+        while(!isPrime(number)){
+          number++;
+        }
+        result += `<span style = 'color:${color}'>${number}</span>` + " ";
+        number ++;
+      }
+      result += "<br>";
+    }
+  }
   else if(numbers.value === "Fibo"){
     let a = 1;
     let b = 1;
@@ -569,6 +922,21 @@ let numbers = document.getElementById("numbers");
         let c = a + b;
         a = b;
         b = c;
+      }
+      result += "<br>";
+    }
+  }
+   else if(numbers.value === "Palindrome"){
+    for(let i=n;i>=1;i--){
+       for(let j=1;j<=i;j++){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
+      }
+       for(let j=i-1;j>=1;j--){
+        result += `<span id='palindrome' style='color:${color}'>${j}</span>`;
+
+       
       }
       result += "<br>";
     }

@@ -30,7 +30,23 @@ span{
 #FiboRight{
     width:35px;
 }
-#squarePattern{}
+#factPattern{
+    width:50px;
+}
+#palindrome{
+    width:12px;
+}
+#factPyramid{
+   
+    text-align: center;
+    width:40px;
+    font-size: 8px;
+}
+#factSquare{
+    width:50px;
+    font-size: 8px;
+
+}
 
 
 .ani {
