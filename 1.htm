@@ -12,24 +12,8 @@
     <script>
         function  btn(){
             let n = document.getElementById("num").value;
-            let output = " ";
-           for(let i=1;i<=n;i++){
-            let rev = i.toString();
-            for(let j=1;j<=i;j++){
-                let str = rev.split("").reverse();
-
-            if(rev === str){
-                output += `${i}`;
-            }
-            else{
-                output += `${i}`;
-
-            }
-            }
-            output += "<br>";
-
+            let sum = 0;
             
-           }
             document.getElementById("result").innerHTML = output;
         }
     </script>

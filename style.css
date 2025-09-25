@@ -1,10 +1,20 @@
+
 span{
-    display: inline-block;
     text-align: center;
-     width: 25px;
+  display: inline-block;
+    width:30px;
     font-size: 12px;
 
 }
+#output {
+  overflow-x: auto;          
+  white-space: nowrap;       
+  scrollbar-width: none;     
+  -ms-overflow-style: none;  
+}
+
+
+
 #fiboSquare{
     width:35px;
     font-size: 12px;
@@ -43,30 +53,30 @@ span{
     font-size: 8px;
 }
 #factSquare{
-    width:50px;
-    font-size: 8px;
-
+   text-align: center;
+   width:50px;
+   overflow-x: scroll;
+   scrollbar-width: none;
+}
+#isfact{
+ display: inline-block;
+   text-align: center;
+   width:64px;
+}
+#facttriangle{
+   display: inline-block;
+  width: 65px;  
+  text-align: center;
 }
 
 
-.ani {
-  display: inline-block;
-  opacity: 0;
-  transform: scale(0.8);
-  animation: popIn 0.4s forwards;
+.animate {
+  animation: round 0.5s linear infinite;
 }
 
-@keyframes popIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
-#number{
-    animation:round 1s linear infinite;
-    display: inline-block;
-}
+
+
 @keyframes round{
    from{
         transform: rotate(0deg);
@@ -75,52 +85,78 @@ span{
     transform: rotate(360deg);
    }
 }
-.odd-number{
-    animation:number 1s linear infinite;
-    display: inline-block;
-
+.scalePyramid{
+    animation: pyramid 0.5s linear infinite;
 }
-@keyframes number{
+
+@keyframes pyramid{
    from{
-        transform: rotate(0deg);
+        transform: scale(0)
    }
-   to{
-    transform: rotate(360deg);
-   }
+  
 }
-.rect{
-    animation: rect 1s linear infinite;
+.bounceReversePyramid{
+    animation: bounce 0.5s alternate infinite;
 }
-@keyframes rect {
+@keyframes bounce {
     from{
-        transform: rotate(0deg);
+        transform: translateY(0);
     }
     to{
-        transform: rotate(360deg);
+        transform: translateY(-20px);
     }
 }
-.gemPatt{
-    animation: gem 1s linear infinite;
+.shakeDiamond{
+    animation: diamond 0.5s linear infinite;
 
 }
-.even{
-    animation : even 1s linear infinite;
+
+@keyframes diamond {
+     0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
 }
-@keyframes even {
+
+.fadeTriangle{
+    animation: fade 0.5s linear infinite;
+
+}
+@keyframes fade{
     from{
-        transform: rotate(0deg);
+       opacity: 0;
     }
     to{
-        transform: rotate(360deg);
+        opacity: 1;
     }
 }
-@keyframes gem {
+.flipTriangle{
+    animation: flip 0.5s linear infinite;
+
+}
+@keyframes flip{
     from{
-        transform: rotate(0deg);
+      transform: rotateY(0);
     }
     to{
-        transform: rotate(360deg);
+       transform: rotateY(180deg);
     }
+}
+.swingHourglass{
+    animation : swing 0.5s linear infinite;
+     transform-origin: top center;
+}
+@keyframes swing {
+    0%   { transform: rotate(10deg); }
+  50%  { transform: rotate(-10deg); }
+  100% { transform: rotate(10deg); }
+}
+@keyframes wave {
+   0%   { transform: rotate(15deg); }
+  50%  { transform: rotate(-15deg); }
+  100% { transform: rotate(15deg); }
+}
+.waveTriangle{
+    animation:wave 0.5s infinite;
 }
 
 .main{
