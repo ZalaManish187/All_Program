@@ -7,10 +7,12 @@ span{
 
 }
 #output {
-  overflow-x: auto;          
-  white-space: nowrap;       
-  scrollbar-width: none;     
-  -ms-overflow-style: none;  
+  overflow-x: scroll;          
+  scrollbar-width: none;
+}
+#oddRight{
+    width:50px;
+  
 }
 
 
@@ -64,9 +66,10 @@ span{
    width:64px;
 }
 #facttriangle{
-   display: inline-block;
-  width: 65px;  
-  text-align: center;
+  width: 60px;  
+  text-align: right;
+  overflow-x: scroll;
+  scrollbar-width: none;
 }
 
 
