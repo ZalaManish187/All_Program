@@ -13,15 +13,15 @@
     />
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
   </head>
-  <body class="min-h-screen bg-indigo-600 flex items-center justify-center">
-
+  <body class="min-h-screen bg-indigo-600 flex flex-col items-center justify-center">
+<div class="fullContainer">
     <div class="main-container" id="main">
-      <div class="bg-white w-100 flex justify-center items-center flex-col p-6 rounded-lg shadow-lg" id="card">
+      <div class="bg-white w-auto flex justify-center items-center flex-col p-6 rounded-lg shadow-lg" id="card">
         <div class="firstRow flex items-center gap-2">
         <div class="inputSearch">
            <input class='h-12 bg-white p-6 rounded-lg shadow-lg main'
           type="number" 
-          placeholder="Enter a Number" value="5"
+          placeholder="Enter a Number" value="20"
           class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900 placeholder-gray-400"
           id="num"
         />
@@ -49,20 +49,20 @@
         </div>
          <div class="secondRow  mt-5">
           <div class="flex justify-center items-center gap-3">
-             <button onclick="Square()" class="w-13 inline-block rounded-md shadow-lg border border-transparent  bg-gray-100 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="patt">
+             <button onclick="Square()" class="w-13 inline-block rounded-md shadow-lg border border-transparent  bg-gray-100 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="printOutput">
             <i class='bxr  bx-square text-black'  ></i> 
             </button>
-             <button onclick="Pyramid()" class="w-13 inline-block rounded-md shadow-lg border border-transparent bg-gray-100 p-2 text-center font-medium text-white hover:bg-indigo-700 main">
+             <button onclick="Pyramid()" class="w-13 inline-block rounded-md shadow-lg border border-transparent bg-gray-100 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="printOutput">
            <i class='bxr  bx-triangle  text-black'  ></i> 
             </button>
-             <button onclick="ReversePyramid()" class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-13 p-2 text-center font-medium text-white hover:bg-indigo-700 main">
+             <button onclick="ReversePyramid()" class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-13 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="printOutput">
             <i class="fa-solid fa-play fa-rotate-90 text-black"></i>
 
 
 
 
             </button>
-             <button onclick="Diamond()" class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-13 p-2 text-center font-medium text-white hover:bg-indigo-700 main">
+             <button onclick="Diamond()" class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-13 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="printOutput">
            <i class='bxr  bx-diamond bx-flip-vertical text-black'  ></i> 
             </button>
             <div class="checkbox flex items-center justify-center">
@@ -90,15 +90,15 @@
         </div>
         </div>
          <div class="thirdRow flex justify-center items-center gap-3 mt-5">
-         <button onclick="RightTriangle()" class="w-13 inline-block rounded-md shadow-lg border border-transparent bg-gray-100 p-2 text-center font-medium text-white hover:bg-indigo-700 main">
+         <button onclick="RightTriangle()" class="w-13 inline-block rounded-md shadow-lg border border-transparent bg-gray-100 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="printOutput">
           <i class='bxr  bx-right-angle-triangle bx-flip-horizontal text-black'  ></i> 
             </button>
-             <button onclick="LeftTriangle()" class="w-13 inline-block rounded-md shadow-lg border border-transparent bg-gray-100 p-2 text-center font-medium text-white hover:bg-indigo-700 main">
+             <button onclick="LeftTriangle()" class="w-13 inline-block rounded-md shadow-lg border border-transparent bg-gray-100 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="printOutput">
               <div class="flex justify-center items-center">
        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA9ElEQVR4AazUTwpBURTH8UvEPmzATBlJGYm5BZiY2QE7YGQLUmRCMjEysAIZWoIV8D3qvO5D3PMund/91z2fnl69vPvzzwfr2AUSVQpWUY5kSaJQBctAUl2GNcmMKojxrCtjm6xIJlTBO4DUlGFCOkSetMhsKgX9piEbQeVJN6xNqII5GqV0FnTGQYuYUAXpe6sBJ2b0G4jnzOgv0IyGgCY0FAxGLeAntCSHfqyg9PovasdBCs0CYiRvv8Emhb6CFS7IpZAsuHsicnfL/PzAKHjjQEr+zoFFaGrclWoy9IlT8MymR8YR2dObgLKeM4wicqHXPQAAAP//uDkvaAAAAAZJREFUAwAqYz4pMAvSXAAAAABJRU5ErkJggg==" alt="">
        </div>
             </button>
-             <button onclick="HourGlass()" class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-13 p-2 text-center font-medium text-white hover:bg-indigo-700 main">
+             <button onclick="HourGlass()" class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-13 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="printOutput">
               <div class="flex items-center flex justify-center">
 <svg xmlns="http://www.w3.org/2000/svg" height="21px" class="rounded-md" viewBox="0 0 960 960" width="21px" fill="#1f1f1f">
  
@@ -112,22 +112,39 @@
 
 
             </button>
-             <button onclick="invertedRight()" class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-13 p-2 text-center font-medium text-white hover:bg-indigo-700 main">
+             <button onclick="invertedRight()" class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-13 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="printOutput">
               <div class="flex items-center justify-center mt-1">
               <img src="downward_left_triangle_solid.png" class="w-5 h-5 rounded-lg" alt="">
               </div>
           
             </button>
-             <button class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-19 p-2 text-center font-medium text-white hover:bg-indigo-700 main">
+             <button class="inline-block rounded-md shadow-lg border border-transparent bg-gray-100 w-19 p-2 text-center font-medium text-white hover:bg-indigo-700 main" id="printOutput">
             <input type="color" id="colorPicker" value="#ff0000" class="w-13 h-8 border-2 border-gray-100 rounded cursor-pointer"/>
             </button>
              
       </div>
-     <div class="flex justify-center items-center text-xl mt-15">
-      <p class="" id="output"></p>
-    </div>
+   
+    
      
     </div>
+    
+    </div>
+    
+</div>
+<div class="flex justify-center items-center mt-6 w-full" id="printOutput">
+<div id="output" class="hidden  bg-white p-4 rounded-lg shadow-md text-lg font-semibold text-gray-800 w-auto">
+  
+</div>
+</div>
+
+<!-- <div class="flex justify-center items-center mt-6 w-full">
+  <div id="output" 
+       class="bg-white text-center p-4 rounded-lg shadow-md text-lg font-semibold text-gray-800 w-auto">
+  </div>
+</div> -->
+
+
+   
        <script src="script.js"></script>
   </body>
 </html>

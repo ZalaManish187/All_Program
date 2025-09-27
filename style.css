@@ -1,58 +1,46 @@
 
+
 span{
-    text-align: center;
   display: inline-block;
-    width:30px;
-    font-size: 12px;
-
-}
-#output {
-  overflow-x: scroll;          
-  scrollbar-width: none;
-}
-#oddRight{
-    width:50px;
+    
+   padding:0 5px;
   
-}
-
-
-
-#fiboSquare{
-    width:35px;
-    font-size: 12px;
-}
-#fibo{
-    width:35px;
-    text-align: center;
-    display: inline-block;
-}
-#fiboDiamond{
-    width:62px;
-    font-size: 13px;
-}
-#fiboHour{
-    width:50px;
-    text-align: center;
-    font-size: 12px;
-}
-#rightFibo{
-    width:30px;
-    font-size: 12px;
-}
-#FiboRight{
-    width:35px;
-}
-#factPattern{
-    width:50px;
-}
-#palindrome{
-    width:12px;
-}
-#factPyramid{
    
+    font-size: 12px;
     text-align: center;
-    width:40px;
-    font-size: 8px;
+
+}
+#output{
+    text-align: center;
+   
+}
+
+
+
+#SquareOdd{
+    text-align: center;
+     overflow-x: scroll;
+   width:50px;
+   scrollbar-width: none;
+    
+}
+#squareEven{
+      text-align: center;
+    width:50px;
+     overflow-x: scroll;
+      scrollbar-width: none;
+
+}
+#squarePrime{
+    text-align: center;
+    width:50px;
+     overflow-x: scroll;
+      scrollbar-width: none;
+}
+#fiboSquare{
+   overflow-x: scroll;
+   width:50px;
+   scrollbar-width: none;
 }
 #factSquare{
    text-align: center;
@@ -60,17 +48,86 @@ span{
    overflow-x: scroll;
    scrollbar-width: none;
 }
-#isfact{
- display: inline-block;
-   text-align: center;
-   width:64px;
+#fiboPyramid{
+     text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
+
+}
+#factPyramid{
+     text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
+}
+#fiboReversePyramid{
+      text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
+}
+#oddPyramid{
+    text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
+}
+#fiboDiamond{
+     text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
+}
+#factDiamond{
+     text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
+}
+#rightFibo{
+     text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
 }
 #facttriangle{
-  width: 60px;  
-  text-align: right;
-  overflow-x: scroll;
-  scrollbar-width: none;
+      text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
 }
+#fiboHour{
+      text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
+}
+#factPyramid{
+      text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
+}
+#OddrightTriangle{
+      text-align: center;
+    width:50px;
+    overflow-x: scroll;
+   scrollbar-width: none;
+}
+#leftTriangleOdd,#evenleftTriangle{
+   
+    display: inline-block;
+    width:50px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    
+   
+    
+}
+
+
+
 
 
 .animate {
@@ -188,9 +245,90 @@ span{
    width:100%;
    padding-left: 10px;
    padding-right: 10px;
+   padding-top: 10px;
   }
-  #num{}
+  span{
+    text-align: center;
+    display: inline-block;
+  }
+  
+  #output{
+    width:100%;
+    
+    
+   
+    
+  }
+  #printOutput{
+     padding-left: 10px;
+   padding-right: 10px;
+  }
+  #SquareOdd,#squareEven,#squarePrime,#fiboSquare{
+   
+   width:13.5px;
+  
+    
+}
+#oddPyramid,#EvenPyramid,#PrimePyramid,#fiboPyramid,#factPyramid{
+    width:13.5px;
+    padding:0 5px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+#factSquare{
+    width:18px;
+}
+#fiboPalindrome{
+    width:0px;
+    font-size: 10px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+#palindromePyramid{
+    width:2px;
+    font-size: 10px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+#reverseOdd,#reverseEven,#reversePrime,#fiboReversePyramid,#reversefactPyramid{
+    width:13px;
+    font-size: 15px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+#oddDiamond,#primeDiamond,#fiboDiamond,#factDiamond,#EvenDiamond{
+    width:13px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+#OddrightTriangle,#evenRightTriangle,#primeRightTriangle,#rightFibo,#facttriangle{
+     width:14px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    text-align: center;
+}
+#oddHourGlass,#evenHourGlass,#primeHourGlass,#fiboHour,#facthour{
+     width:13px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    text-align: center;
+}
+#leftTriangleOdd{
+    width:13px;
+    scrollbar-width: none;
+    overflow-x: scroll;
+    text-align: center;
+}
+
+ 
+ 
+
   #card{
     width:100%;
   }
+}
+@media(max-width:867px){
+    #main{
+        width:100%;
+    }
 }
