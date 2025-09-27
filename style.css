@@ -12,6 +12,7 @@ span{
 }
 #output{
     text-align: center;
+    display: inline-block;
    
 }
 
@@ -126,6 +127,14 @@ span{
    
     
 }
+#palindrome{
+     
+    width:50px;
+    text-align: left;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
 
 
 
@@ -232,7 +241,8 @@ span{
   width: 1200px; 
   display: flex;
   justify-content: center;
-  align-items: center;            
+  align-items: center;  
+  flex-direction: column;          
   box-sizing: border-box; 
 }
 
@@ -244,16 +254,30 @@ span{
 @media (max-width: 480px) {
   #main {
    width:100%;
+ 
+   
   
    padding-top: 10px;
+   
+   
   }
   span{
     text-align: center;
     display: inline-block;
+    
+    
   }
+  
   
   #output{
     width:100%;
+   
+    margin-bottom: 20px;
+    margin-top: 10px;
+    max-width: 400px;
+    text-align: center;
+   
+   overflow-x: scroll;
    
     
     
@@ -263,15 +287,19 @@ span{
   
   #SquareOdd,#squareEven,#squarePrime,#fiboSquare{
    
-   width:13.5px;
+   width:13px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    text-align: center;
   
     
 }
 #oddPyramid,#EvenPyramid,#PrimePyramid,#fiboPyramid,#factPyramid{
-    width:13.5px;
-    padding:0 5px;
+    width:13px;
+   
     overflow-x: scroll;
     scrollbar-width: none;
+    text-align: center;
 }
 #factSquare{
     width:18px;
@@ -283,14 +311,14 @@ span{
     scrollbar-width: none;
 }
 #palindromePyramid{
-    width:2px;
-    font-size: 10px;
+    width:5px;
+    
     overflow-x: scroll;
     scrollbar-width: none;
 }
 #reverseOdd,#reverseEven,#reversePrime,#fiboReversePyramid,#reversefactPyramid{
     width:13px;
-    font-size: 15px;
+    font-size: 10px;
     overflow-x: scroll;
     scrollbar-width: none;
 }
@@ -300,7 +328,7 @@ span{
     scrollbar-width: none;
 }
 #OddrightTriangle,#evenRightTriangle,#primeRightTriangle,#rightFibo,#facttriangle{
-     width:14px;
+     width:13px;
     overflow-x: scroll;
     scrollbar-width: none;
     text-align: center;
@@ -317,12 +345,19 @@ span{
     overflow-x: scroll;
     text-align: center;
 }
+#palindrome{
+      width:13px;
+    scrollbar-width: none;
+    overflow-x: scroll;
+    text-align: center;
+}
 
  
  
 
   #card{
     width:100%;
+    
    
   }
 }

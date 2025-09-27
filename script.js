@@ -4,7 +4,7 @@ let patt = document.getElementById("pattern");
 
 
 
-let printOutput = document.getElementById("printOutput");
+let printOutput = document.getElementById("print");
 
 printOutput.addEventListener("click", () => {
   if (output.classList.contains("hidden")) {
@@ -150,7 +150,7 @@ function Pyramid() {
   if (numbers.value === "Odd") {
     for (let i = 1; i <= n; i++) {
       for (let j = 1; j <= n - i; j++) {
-        result += " ";
+        result += "&nbsp;";
       }
       for (let k = 1; k <= i; k++) {
         result += `<span class='scaleAnimation' id='oddPyramid'  style='color:${color}'>${O}</span>` + " ";
@@ -548,7 +548,7 @@ function RightTriangle() {
   if (numbers.value === "Odd") {
     for (let i = 1; i <= n; i++) {
       for (let j = 2 * n - i; j >= i; j--) {
-        result += "&nbsp;&nbsp;";
+        result += "&nbsp;";
       }
       for (let k = 1; k <= i; k++) {
         result += `<span class='fade' id='OddrightTriangle'  style='color:${color}'>${O}</span>` + " ";
@@ -560,7 +560,7 @@ function RightTriangle() {
     let E = 2;
     for (let i = 1; i <= n; i++) {
       for (let j = 2 * n - i; j >= i; j--) {
-        result += "&nbsp;&nbsp;";
+        result += "&nbsp;";
       }
       for (let k = 1; k <= i; k++) {
         result += `<span class='fade' id='evenRightTriangle' style='color:${color}'>${E}</span>` + " ";
@@ -572,7 +572,7 @@ function RightTriangle() {
     let number = 0;
     for (let i = 1; i <= n; i++) {
       for (let j = 2 * n - i; j >= i; j--) {
-        result += "&nbsp;&nbsp;";
+        result += "&nbsp;";
       }
       for (let k = 1; k <= i; k++) {
         while (!isPrime(number)) {
@@ -589,7 +589,7 @@ function RightTriangle() {
     let b = 1;
     for (let i = 1; i <= n; i++) {
       for (let j = 2 * n - i; j >= i; j--) {
-        result += "&nbsp;&nbsp;";
+        result += "&nbsp;";
       }
       for (let k = 1; k <= i; k++) {
         result += `<span class='fade' id='rightFibo' style='color:${color}'>${a}</span>` + " ";
@@ -602,13 +602,13 @@ function RightTriangle() {
   } else if (numbers.value === "Palindrome") {
     for (let i = 1; i <= n; i++) {
       for (let j = 2 * n - i; j >= i; j--) {
-        result += "&nbsp;&nbsp;";
+        result += "&nbsp;";
       }
       for (let j = 1; j <= i; j++) {
-        result += `<span class='fade' id='palindrome' style='color:${color}'>${j}</span>`;
+        result += `<span class='fade' id='palindrome' style='color:${color}'>${j}</span>` + " ";
       }
       for (let j = i - 1; j >= 1; j--) {
-        result += `<span class='fade' id='palindrome' style='color:${color}'>${j}</span>`;
+        result += `<span class='fade' id='palindrome' style='color:${color}'>${j}</span>` + " ";
       }
       result += "<br>";
     }
@@ -620,7 +620,7 @@ function RightTriangle() {
 
     for(let i=1;i<=n;i++){
       for (let j = 2 * n - i; j >= i; j--) {
-        result += "&nbsp;&nbsp;";
+        result += "&nbsp;";
       }
      
       for(let j=1;j<=i;j++){
