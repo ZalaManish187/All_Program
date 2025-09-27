@@ -244,8 +244,8 @@ span{
 @media (max-width: 480px) {
   #main {
    width:100%;
-   padding-left: 10px;
-   padding-right: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
    padding-top: 10px;
   }
   span{
@@ -255,15 +255,13 @@ span{
   
   #output{
     width:100%;
+   
     
     
    
     
   }
-  #printOutput{
-     padding-left: 10px;
-   padding-right: 10px;
-  }
+  
   #SquareOdd,#squareEven,#squarePrime,#fiboSquare{
    
    width:13.5px;
