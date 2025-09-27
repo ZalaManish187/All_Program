@@ -244,8 +244,7 @@ span{
 @media (max-width: 480px) {
   #main {
    width:100%;
-   padding-left: 20px;
-   padding-right: 20px;
+  
    padding-top: 10px;
   }
   span{
@@ -324,6 +323,7 @@ span{
 
   #card{
     width:100%;
+   
   }
 }
 @media(max-width:867px){
