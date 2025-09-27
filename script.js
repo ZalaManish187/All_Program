@@ -643,12 +643,10 @@ function LeftTriangle() {
   if (numbers.value === "Odd") {
     let O = 1;
     for (let i = 1; i <= n; i++) {
-    for(let j=1;j<=i;j++){
-      result += `<span class='flip' style='color:${color}'></span>` + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-    }
+   
      
       for (let j = 1; j <= i; j++) {
-          result += `<span class='flip' id='leftTriangleOdd' style='color:${color}'>${O}</span>` + "&nbsp;&nbsp;";
+          result += `<span class='flip' id='leftTriangleOdd' style='color:${color}'>${O}</span>` + " ";
           O += 2;
          
         

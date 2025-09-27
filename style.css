@@ -119,6 +119,7 @@ span{
    
     display: inline-block;
     width:50px;
+    text-align: left;
     overflow-x: scroll;
     scrollbar-width: none;
     
