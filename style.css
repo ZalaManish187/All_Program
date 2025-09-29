@@ -391,7 +391,7 @@ span{
     scrollbar-width: none;
 }
 #OddrightTriangle,#evenRightTriangle,#primeRightTriangle,#rightFibo,#facttriangle{
-     width:15px;
+     width:13px;
     overflow-x: scroll;
     scrollbar-width: none;
     display: inline-block;
@@ -410,7 +410,7 @@ span{
     overflow-x: scroll;
 
 }
-#oddRight,#evenRight,#primeRight,#fiboRight,#factRight{
+#oddInvertedRight,#evenInvertedRight,#primeInvertedRight,#fiboRight,#factRight{
     width:18px;
     scrollbar-width: none;
     overflow-x: scroll;
