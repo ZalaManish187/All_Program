@@ -150,7 +150,7 @@ function Pyramid() {
   if (numbers.value === "Odd") {
     for (let i = 1; i <= n; i++) {
       for (let j = 1; j <= n - i; j++) {
-        result += "&nbsp;";
+        result += " ";
       }
       for (let k = 1; k <= i; k++) {
         result += `<span class='scaleAnimation' id='oddPyramid'  style='color:${color}'>${O}</span>` + " ";
@@ -162,7 +162,7 @@ function Pyramid() {
     let E = 2;
     for (let i = 1; i <= n; i++) {
       for (let j = 1; j <= n - i; j++) {
-        result += " ";
+        result += "  ";
       }
       for (let k = 1; k <= i; k++) {
         result += `<span class='scaleAnimation' id='EvenPyramid' style='color:${color}'>${E}</span>` + " ";
@@ -172,7 +172,7 @@ function Pyramid() {
     }
   } else if (numbers.value === "Prime") {
     let number = 2;
-    let count = 0;
+    let count = 1;
     for (let i = 1; i <= n; i++) {
       for (let j = 1; j <= n - i; j++) {
         result += " ";
@@ -282,8 +282,8 @@ function ReversePyramid() {
       result += "<br>";
     }
   } else if (numbers.value === "Prime") {
-    let number = 0;
-    let count = 0;
+    let number = 1;
+   
     for (let i = n; i >= 1; i--) {
       for (let j = 1; j <= n - i; j++) {
         result += " ";
@@ -294,7 +294,7 @@ function ReversePyramid() {
         }
         result += `<span class='bounce' id='reversePrime' style='color:${color}'>${number}</span>` + " ";
         number++;
-        count++;
+     
       }
       result += "<br>";
     }
@@ -506,10 +506,10 @@ function Diamond() {
         result += " ";
       }
       for (let j = 1; j <= i; j++) {
-        result += `<span id='palindrome' class='shake' style='color:${color}'>${j}</span>` + " ";
+        result += `<span id='palindromeDiamond' class='shake' style='color:${color}'>${j}</span>` + " ";
       }
       for (let j = i - 1; j >= 1; j--) {
-        result += `<span id='palindrome' class='shake' style='color:${color}'>${j}</span>` + " ";
+        result += `<span id='palindromeDiamond' class='shake' style='color:${color}'>${j}</span>` + " ";
       }
       result += "<br>";
     }
@@ -518,10 +518,10 @@ function Diamond() {
         result += " ";
       }
       for (let j = 1; j <= i; j++) {
-        result += `<span id='palindrome' class='shake' style='color:${color}'>${j}</span>` + " ";
+        result += `<span id='palindromeDiamond' class='shake' style='color:${color}'>${j}</span>` + " ";
       }
       for (let j = i - 1; j >= 1; j--) {
-        result += `<span id='palindrome' class='shake' style='color:${color}'>${j}</span>` + " ";
+        result += `<span id='palindromeDiamond' class='shake' style='color:${color}'>${j}</span>` + " ";
       }
       result += "<br>";
     }
@@ -620,7 +620,7 @@ function RightTriangle() {
 
     for(let i=1;i<=n;i++){
       for (let j = 2 * n - i; j >= i; j--) {
-        result += "&nbsp;";
+        result += " ";
       }
      
       for(let j=1;j<=i;j++){
@@ -644,7 +644,7 @@ function LeftTriangle() {
     let O = 1;
     for (let i = 1; i <= n; i++) {
    
-     
+     result += "&nbsp;&nbsp;"
       for (let j = 1; j <= i; j++) {
           result += `<span class='flip' id='leftTriangleOdd' style='color:${color}'>${O}</span>` + " ";
           O += 2;
@@ -656,9 +656,7 @@ function LeftTriangle() {
   } else if (numbers.value === "Even") {
     let E = 2;
     for (let i = 1; i <= n; i++) {
-       for(let j=1;j<=i-1;j++){
-      result += `<span class='flip'  style='color:${color}'></span>` + " ";
-    }
+       
       for (let k = 1; k <= i; k++) {
         result += `<span class='flip' id='evenleftTriangle' style='color:${color}'>${E}</span>` + " ";
         E += 2;
@@ -672,7 +670,7 @@ function LeftTriangle() {
         while (!isPrime(number)) {
           number++;
         }
-        result += `<span class='flip' style='color:${color}'>${number}</span>`;
+        result += `<span class='flip' id='primeleftTriangle' style='color:${color}'>${number}</span>`;
         number++;
       }
       result += "<br>";
@@ -683,7 +681,7 @@ function LeftTriangle() {
     let b = 1;
     for (let i = 1; i <= n; i++) {
       for (let j = 1; j <= i; j++) {
-        result += `<span class='flip' style='color:${color}'>${a}</span>` + " ";
+        result += `<span class='flip' id='fiboleftTriangle' style='color:${color}'>${a}</span>` + " ";
         let c = a + b;
         a = b;
         b = c;
@@ -693,23 +691,22 @@ function LeftTriangle() {
   } else if (numbers.value === "Palindrome") {
     for (let i = 1; i <= n; i++) {
       for (let j = 1; j <= i; j++) {
-        result += `<span class='flip' id='palindrome' style='color:${color}'>${j}</span>`;
+        result += `<span class='flip' id='palindromeleft' style='color:${color}'>${j}</span>`;
       }
       for (let j = i - 1; j >= 1; j--) {
-        result += `<span class='flip' id='palindrome' style='color:${color}'>${j}</span>`;
+        result += `<span class='flip' id='palindromeleft' style='color:${color}'>${j}</span>`;
       }
       result += "<br>";
     }
   } else if (numbers.value === "Factorial") {
-    let number = 1;
+    let number = 1n;
+    let fact = 1n;
     for (let i = 1; i <= n; i++) {
       for (let j = 1; j <= i; j++) {
-        let fact = 1;
-        for (let x = 1; x <= number; x++) {
-          fact *= x;
-        }
+       if(number == 1n)fact = 1n
+       else fact = fact * number;
         result +=
-          `<span id='factSquare' class='flip'  style='color:${color}'>${fact}</span>` + "&nbsp;";
+          `<span  class='flip' id ='factleftTriangle'  style='color:${color}'>${fact}</span>` + " ";
         number++;
       }
       result += "<br>";
@@ -830,10 +827,10 @@ function HourGlass() {
         result += " ";
       }
       for (let j = 1; j <= i; j++) {
-        result += `<span  class='pulse' id='palindrome' style='color:${color}'>${j}</span>` + " ";
+        result += `<span  class='pulse' id='palindromeHourGlass' style='color:${color}'>${j}</span>` + " ";
       }
       for (let j = i - 1; j >= 1; j--) {
-        result += `<span  class='pulse' id='palindrome' style='color:${color}'>${j}</span>` + " ";
+        result += `<span  class='pulse' id='palindromeHourGlass' style='color:${color}'>${j}</span>` + " ";
       }
       result += "<br>";
     }
@@ -842,10 +839,10 @@ function HourGlass() {
         result += " ";
       }
       for (let j = 1; j <= i; j++) {
-        result += `<span class='pulse' id='palindrome' style='color:${color}'>${j}</span>` + " ";
+        result += `<span class='pulse' id='palindromeHourGlass' style='color:${color}'>${j}</span>` + " ";
       }
       for (let j = i - 1; j >= 1; j--) {
-        result += `<span class='pulse' id='palindrome' style='color:${color}'>${j}</span>` + " ";
+        result += `<span class='pulse' id='palindromeHourGlass' style='color:${color}'>${j}</span>` + " ";
       }
       result += "<br>";
     }
@@ -904,9 +901,9 @@ function invertedRight() {
 // })  
   if (numbers.value === "Odd") {
     for (let i = n; i >= 1; i--) {
-      result += "&nbsp;&nbsp;&nbsp;"
+      result += ""
       for (let j = 1; j <= i; j++) {
-        result += `<span class='wave'  style='color:${color}'>${O}</span>`;
+        result += `<span class='wave' id='oddInvertedRight' style='color:${color}'>${O}</span>`;
         O += 2;
       }
       result += "<br>";
@@ -915,7 +912,7 @@ function invertedRight() {
     let E = 2;
     for (let i = n; i >= 1; i--) {
       for (let j = 1; j <= i; j++) {
-        result += `<span class='wave' style='color:${color}'>${E}</span>` + " ";
+        result += `<span class='wave' id='evenInvertedRight' style='color:${color}'>${E}</span>` + " ";
         E += 2;
       }
       result += "<br>";
@@ -927,7 +924,7 @@ function invertedRight() {
         while (!isPrime(number)) {
           number++;
         }
-        result += `<span class='wave' style = 'color:${color}'>${number}</span>` + " ";
+        result += `<span class='wave' id='primeInvertedRight' style = 'color:${color}'>${number}</span>` + " ";
         number++;
       }
       result += "<br>";
@@ -938,7 +935,7 @@ function invertedRight() {
     for (let i = n; i >= 1; i--) {
       for (let j = 1; j <= i; j++) {
         result +=
-          `<span id="FiboRight" class='wave' style='color:${color}'>${a}</span>` + " ";
+          `<span id="fiboRight" class='wave' style='color:${color}'>${a}</span>` + " ";
         let c = a + b;
         a = b;
         b = c;
@@ -948,21 +945,23 @@ function invertedRight() {
   } else if (numbers.value === "Palindrome") {
     for (let i = n; i >= 1; i--) {
       for (let j = 1; j <= i; j++) {
-        result += `<span class='wave' id='palindrome' style='color:${color}'>${j}</span>`;
+        result += `<span class='wave' id='palindromeInvertedRight' style='color:${color}'>${j}</span>`;
       }
       for (let j = i - 1; j >= 1; j--) {
-        result += `<span class='wave' id='palindrome' style='color:${color}'>${j}</span>`;
+        result += `<span class='wave' id='palindromeInvertedRight' style='color:${color}'>${j}</span>`;
       }
       result += "<br>";
     }
   } else if (numbers.value === "Factorial") {
-    let number = 1;
+    let number = 1n;
+    let fact = 1n;
     for (let i = n; i >= 1; i--) {
     
       for (let j = 1; j <= i; j++) {
-       
+       if(number == 1n)fact = 1n
+       else fact = fact * number;
          result +=
-          `<span id='isfact' class='wave'  style='color:${color}'>${isFact(number)}</span>` + "&nbsp;";
+          `<span id='factRight' class='wave'  style='color:${color}'>${fact}</span>` + " ";
         number++;
       
       }

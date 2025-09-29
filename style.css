@@ -13,30 +13,27 @@ span{
 #output{
     text-align: center;
     display: inline-block;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    width:100%;
    
 }
 
 
 
-#SquareOdd{
+#SquareOdd,#squareEven,#squarePrime{
     text-align: center;
      overflow-x: scroll;
-   width:50px;
+   width:30px;
    scrollbar-width: none;
     
 }
-#squareEven{
-      text-align: center;
-    width:50px;
-     overflow-x: scroll;
-      scrollbar-width: none;
 
-}
-#squarePrime{
-    text-align: center;
+
+#oddPyramid,#EvenPyramid,#PrimePyramid{
     width:50px;
-     overflow-x: scroll;
-      scrollbar-width: none;
+    overflow-x: scroll;
+    scrollbar-width: none;
 }
 #fiboSquare{
    overflow-x: scroll;
@@ -61,6 +58,16 @@ span{
     width:50px;
     overflow-x: scroll;
    scrollbar-width: none;
+}
+#reversefactPyramid{
+    overflow-x: scroll;
+    scrollbar-width: none;
+    width:50px;
+}
+#reversePrime,#reverseEven,#reverseOdd{
+    width:50px;
+    overflow-x: scroll;
+    scrollbar-width: none;
 }
 #fiboReversePyramid{
       text-align: center;
@@ -87,14 +94,14 @@ span{
    scrollbar-width: none;
 }
 #rightFibo{
-     text-align: center;
+     float:right;
     width:50px;
     overflow-x: scroll;
    scrollbar-width: none;
 }
 #facttriangle{
-      text-align: center;
-    width:50px;
+    float:right;
+    width:55px;
     overflow-x: scroll;
    scrollbar-width: none;
 }
@@ -103,6 +110,11 @@ span{
     width:50px;
     overflow-x: scroll;
    scrollbar-width: none;
+}
+#facthour{
+    width:50px;
+    scrollbar-width: none;
+    overflow-x: scroll;
 }
 #factPyramid{
       text-align: center;
@@ -116,23 +128,66 @@ span{
     overflow-x: scroll;
    scrollbar-width: none;
 }
-#leftTriangleOdd,#evenleftTriangle{
+#leftTriangleOdd,#evenleftTriangle,#primeleftTriangle{
    
-    display: inline-block;
     width:50px;
-    text-align: left;
-    overflow-x: scroll;
-    scrollbar-width: none;
-    
+  
+    float:left;    
    
     
 }
-#palindrome{
-     
-    width:50px;
-    text-align: left;
+#factleftTriangle,#fiboleftTriangle{
     overflow-x: scroll;
     scrollbar-width: none;
+    float:left;
+    width:50px;
+}
+#OddrightTriangle,#evenRightTriangle,#primeRightTriangle{
+    width:50px;
+    float:right;
+    overflow-x: sroll;
+    scrollbar-width: none;
+    
+}
+#factRight,#fiboRight{
+    width:50px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    float:left;
+}
+#palindromePyramid{
+    width:20px;
+    overflow-x: scroll;
+    
+    scrollbar-width: none;
+
+}
+#palindromeDiamond{
+    width:20px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+#palindrome{
+     
+   
+    float:right;
+    width:25px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+#primeInvertedRight,#evenInvertedRight,#oddInvertedRight{
+    width:40px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    float: left;
+}
+#palindromeInvertedRight{
+    float:left;
+    scrollbar-width: none;
+    overflow-x: scroll;
+}
+#palindromeleft{
+    float:left;
 }
 
 
@@ -294,10 +349,18 @@ span{
   
     
 }
-#oddPyramid,#EvenPyramid,#PrimePyramid,#fiboPyramid,#factPyramid{
+#oddPyramid,#EvenPyramid{
     width:13px;
-   
     overflow-x: scroll;
+    scrollbar-width: none;
+   
+  
+    text-align: center;
+}
+#PrimePyramid,#fiboPyramid,#factPyramid{
+       width:13px;
+   
+  overflow-x: scroll;
     scrollbar-width: none;
     text-align: center;
 }
@@ -328,10 +391,12 @@ span{
     scrollbar-width: none;
 }
 #OddrightTriangle,#evenRightTriangle,#primeRightTriangle,#rightFibo,#facttriangle{
-     width:13px;
+     width:18px;
     overflow-x: scroll;
     scrollbar-width: none;
-    text-align: center;
+    display: inline-block;
+    
+   
 }
 #oddHourGlass,#evenHourGlass,#primeHourGlass,#fiboHour,#facthour{
      width:13px;
@@ -339,17 +404,36 @@ span{
     scrollbar-width: none;
     text-align: center;
 }
-#leftTriangleOdd{
-    width:13px;
+#leftTriangleOdd,#evenleftTriangle,#primeleftTriangle,#fiboleftTriangle,#factleftTriangle{
+    width:17px;
     scrollbar-width: none;
     overflow-x: scroll;
-    text-align: center;
+
+}
+#oddRight,#evenRight,#primeRight,#fiboRight,#factRight{
+    width:18px;
+    scrollbar-width: none;
+    overflow-x: scroll;
 }
 #palindrome{
-      width:13px;
+    width:-20px;
     scrollbar-width: none;
     overflow-x: scroll;
-    text-align: center;
+}
+#palindromePyramid{
+    width:10px;
+    scrollbar-width: none;
+    overflow-x: scroll;
+}
+#palindromeInvertedRight{
+    scrollbar-width: none;
+    overflow-x: scroll;
+    width:0px;
+}
+#palindromeHourGlass{
+    scrollbar-width: none;
+    overflow-x: scroll;
+    width:0px;
 }
 
  
