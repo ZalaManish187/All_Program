@@ -1,22 +1,16 @@
-let output = document.getElementById("output");
 let colorPicker = document.getElementById("colorPicker");
 let patt = document.getElementById("pattern");
 
 
 
-let printOutput = document.getElementById("print");
 
-printOutput.addEventListener("click", () => {
-  if (output.classList.contains("hidden")) {
-    // Show output
-    output.classList.remove("hidden");
-    output.classList.add("block");
-  } else {
-    // Hide output
-    output.classList.remove("block");
-    output.classList.add("hidden");
-  }
-});
+
+  let output = document.getElementById("output");
+
+
+
+
+
 
 
 
